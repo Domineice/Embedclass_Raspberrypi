@@ -1,4 +1,3 @@
-#6213129 Posawat Tangon
 
 import time
 import datetime
