@@ -1,4 +1,4 @@
-#6213129 Posawat Tangon
+
 import RPi.GPIO as GPIO
 import Adafruit_ADS1x15
 
