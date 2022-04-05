@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<title> Raspberry Pi Web Server</title>
+<body>
+
+<h1 style="text-align: center;">Sensor</h1>
+<h2 style="text-align: center;" id="sensorupdate"></h2>
+<p style="text-align: center;"><button type="button" id="ButtonOnclick">Click Here</button></p>
+
+
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+
+$(
+/* Control LED function*/
+function() {
+    $('#ButtonOnclick').click(function()
+      {
+         $.getJSON('/ON',function(data)
+           {
+	     $("#status").text(data.status);
+           });
+      })
+
+}
+);
+$(
+function updateSensor() {
+    $.getJSON('/sensorup',function(data) 
+	{
+	  $("#sensorupdate").text(data.sensorupdate);
+	  setTimeout(function(){updateSensor();},1000);
+	});
+}
+);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
